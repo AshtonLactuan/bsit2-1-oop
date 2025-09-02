@@ -16,7 +16,7 @@ public class LibraryManager {
             if (books == null) {
                 throw new IllegalStateException("Book list is not initialized!");
             }
-            System.out.println("\n Current Books");
+            System.out.println("\n--- Current Books ---");
             if (books.isEmpty()) {
                 System.out.println("No books available in the library.");
             } else {
@@ -66,7 +66,7 @@ public class LibraryManager {
             try {
                 index = Integer.parseInt(input);
             } catch (NumberFormatException e) {
-                throw new NumberFormatException("Please enter a valid number!");
+                throw new IllegalArgumentException("Please enter a valid number!");
             }
 
             if (index < 1) {
@@ -79,11 +79,14 @@ public class LibraryManager {
             String removedBook = books.remove(index - 1);
             System.out.println("Book '" + removedBook + "' removed successfully!");
 
-        } catch (NumberFormatException | IllegalArgumentException | ArrayIndexOutOfBoundsException | IllegalStateException e) {
+        } catch (IllegalArgumentException e) {
+            System.out.println("Error: " + e.getMessage());
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Error: " + e.getMessage());
+        } catch (IllegalStateException e) {
             System.out.println("Error: " + e.getMessage());
         } finally {
             System.out.println("Remove book operation completed.");
         }
     }
 }
-
