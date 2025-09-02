@@ -40,10 +40,10 @@ public class LibraryManager {
                 String title = scanner.nextLine().trim();
 
                 if (title == null || title.isEmpty()) {
-                    throw new IllegalArgumentException("Book title cannot be empty.");
+                    throw new IllegalArgumentException("Book title cannot be empty!");
                 }
                 if (title.length() < 3) {
-                    throw new IllegalArgumentException("Book title must be at least 3 characters long.");
+                    throw new IllegalArgumentException("Book title must be at least 3 characters long!");
                 }
 
                 books.add(title);
