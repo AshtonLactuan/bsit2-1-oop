@@ -16,7 +16,7 @@ public class LibraryManager {
             if (books == null) {
                 throw new IllegalStateException("Book list is not initialized!");
             }
-            System.out.println("\n--- Current Books ---");
+            System.out.println("\n Current Books");
             if (books.isEmpty()) {
                 System.out.println("No books available in the library.");
             } else {
