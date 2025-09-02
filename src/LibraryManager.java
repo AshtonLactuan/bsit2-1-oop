@@ -64,30 +64,32 @@ public class LibraryManager {
             try {
                 if (books.isEmpty()) {
                     System.out.println("Library is empty. No books to remove.");
+                    System.out.println("Remove book operation completed.\n");
                     return;
                 }
-
+    
                 System.out.print("Enter book number to remove (1-" + books.size() + "): ");
-                String input = scanner.nextLine();
+                String input = scanner.nextLine().trim();
+    
                 int index = Integer.parseInt(input);
-
-                if (index < 1) {
-                    throw new IllegalArgumentException("Book number cannot be negative or zero.");
+    
+                if (index < 1 || index > books.size()) {
+                    System.out.println("Error: Invalid book number! Please enter between 1 and " + books.size() + ".");
+                } else {
+                    String removedBook = books.remove(index - 1);
+                    System.out.println("Book '" + removedBook + "' removed successfully!");
+                    break;
                 }
-
-                String removedBook = books.remove(index - 1);
-                System.out.println("Book '" + removedBook + "' removed successfully!");
-                break;
-
+    
             } catch (NumberFormatException e) {
-                System.out.println("Remove book operation completed. \n");
-            } catch (IndexOutOfBoundsException e) {
-                System.out.println("Remove book operation completed. \n");
-            } catch (IllegalArgumentException e) {
-                System.out.println("Invalid input: " + e.getMessage() + "\n");
+                System.out.println("Error: Please enter a valid number!");
             }
+    
+            System.out.println("Remove book operation completed.\n");
         }
+    
         System.out.println("Remove book operation completed.\n");
         showBooks();
     }
 }
+    
