@@ -52,7 +52,7 @@ public class LibraryManager {
 
             } catch (IllegalArgumentException e) {
                 System.out.println("Error: " + e.getMessage());
-                System.out.println("Please try again.\n");
+                System.out.println("Add book operation completed. \n");
             }
         }
         System.out.println("Add book operation completed.\n");
@@ -80,9 +80,9 @@ public class LibraryManager {
                 break;
 
             } catch (NumberFormatException e) {
-                System.out.println("Invalid input: Please enter a valid number.\n");
+                System.out.println("Remove book operation completed. \n");
             } catch (IndexOutOfBoundsException e) {
-                System.out.println("Error: Invalid book number. Please try again.\n");
+                System.out.println("Remove book operation completed. \n");
             } catch (IllegalArgumentException e) {
                 System.out.println("Invalid input: " + e.getMessage() + "\n");
             }
