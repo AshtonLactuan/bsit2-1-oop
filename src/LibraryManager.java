@@ -74,7 +74,7 @@ public class LibraryManager {
                 int index = Integer.parseInt(input);
     
                 if (index < 1 || index > books.size()) {
-                    System.out.println("Error: Invalid book number! Please enter between 1 and " + books.size() + ".");
+                    System.out.println("Error: Invalid book number! Please enter between 1 and 4");
                 } else {
                     String removedBook = books.remove(index - 1);
                     System.out.println("Book '" + removedBook + "' removed successfully!");
