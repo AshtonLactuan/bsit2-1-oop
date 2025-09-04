@@ -19,7 +19,6 @@ public class Main {
         System.out.println("Book: Java Programming by John Smith, Average Rating: 4.0, Level: Good");
         System.out.println("Book: Data Structures by Alice Brown, Average Rating: 4.25, Level: Good");
         System.out.println("Book: Web Development by Bob Wilson, Average Rating: 3.2, Level: Average");
-
         System.out.println("\nTotal books created: 4" );
         System.out.println("Highest rated book: Data Structures by Alice Brown (4.25)");
     }
