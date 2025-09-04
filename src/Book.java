@@ -28,13 +28,22 @@ class Book {
     }
 
     public String getPopularityLevel() {
-        if (ratings.isEmpty()) return "No ratings";
+        if (ratings.isEmpty()) {
+            return "No ratings";
+        }
+
         double avg = getAverageRating();
-        if (avg >= 4.5) return "Excellent";
-        if (avg >= 3.5) return "Good";
-        if (avg >= 2.5) return "Average";
-        if (avg >= 1.5) return "Poor";
-        return "Terrible";
+        if (avg >= 4.5) {
+            return "Excellent";
+        } else if (avg >= 3.5) {
+            return "Good";
+        } else if (avg >= 2.5) {
+            return "Average";
+        } else if (avg >= 1.5) {
+            return "Poor";
+        } else {
+            return "Terrible";
+        }
     }
 
     public void addMultipleRatings(int... ratings) {
@@ -58,15 +67,12 @@ class Book {
     public static int getTotalBooks() {
         return totalBooks;
     }
-
     public String getTitle() {
         return title;
     }
-
     public String getAuthor() {
         return author;
     }
-
     public String displayBook() {
         return "Book: " + title + " by " + author + ", Average Rating: " + getAverageRating() + ", Level: " + getPopularityLevel();
     }
